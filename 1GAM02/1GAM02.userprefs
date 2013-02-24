@@ -1,9 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NoteAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GradientBG.cs">
     <Files>
-      <File FileName="Assets\Scripts\Note.cs" Line="8" Column="1" />
-      <File FileName="Assets\Scripts\NoteAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GradientBG.cs" Line="3" Column="24" />
+      <File FileName="Assets\Scripts\Note.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NoteAction.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\Game.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DestroyFunction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KeyHandler.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
