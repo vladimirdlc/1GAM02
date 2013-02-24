@@ -14,4 +14,5 @@ public class Note  {
         this.isActive = true;
     }
 
+
 }
