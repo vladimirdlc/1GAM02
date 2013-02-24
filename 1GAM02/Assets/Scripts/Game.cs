@@ -7,8 +7,12 @@ public class Game : MonoBehaviour {
 	// Use this for initialization
     IEnumerator Start()
     {
+        float[] segs = { 0.3f, 0.9f, 0.9f };
+        int i = -1;
+
 	     while (true) {
-            yield return new WaitForSeconds(3);
+            i = ++i % segs.Length;
+            yield return new WaitForSeconds(segs[i]);
             createNote();
         }
 	}
