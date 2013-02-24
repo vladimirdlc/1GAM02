@@ -9,6 +9,8 @@ public class KeyHandler : MonoBehaviour {
     private Dictionary<KeyCode, AudioSource> sounds;
 
     public AudioSource soundA;
+    public AudioSource soundS;
+    public AudioSource soundD;
 
     public static KeyHandler Instance { 
         get {
@@ -25,6 +27,8 @@ public class KeyHandler : MonoBehaviour {
         keys = new List<Note>();
         sounds = new Dictionary<KeyCode, AudioSource>();
         sounds.Add(KeyCode.A, soundA);
+        sounds.Add(KeyCode.S, soundS);
+        sounds.Add(KeyCode.D, soundD);
     }
 
     void Update()
@@ -34,8 +38,8 @@ public class KeyHandler : MonoBehaviour {
             switch (note.key)
             {
                 case KeyCode.A:
-                case KeyCode.K:
-                case KeyCode.H:
+                case KeyCode.S:
+                case KeyCode.D:
                     note.isActive = note.timeAlive > 0;
                     if (note.isActive)
                     {
@@ -49,6 +53,7 @@ public class KeyHandler : MonoBehaviour {
                     {
                         if (!note.isPressed)
                         {
+                           
                            // Debug.Log(note.key+"You suck");
                         }
                     }
