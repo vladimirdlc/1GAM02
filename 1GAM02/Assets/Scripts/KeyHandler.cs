@@ -8,6 +8,8 @@ public class KeyHandler : MonoBehaviour {
     private List<Note> keys;
     private Dictionary<KeyCode, AudioSource> sounds;
 
+    public GameObject fallKeyBound;
+
     public AudioSource soundA;
     public AudioSource soundS;
     public AudioSource soundD;
@@ -22,6 +24,11 @@ public class KeyHandler : MonoBehaviour {
         } 
     }
 
+    public void playSound(KeyCode key)
+    {
+        sounds[key].Play();
+    }
+
     void Awake()
     {
         keys = new List<Note>();
@@ -32,7 +39,7 @@ public class KeyHandler : MonoBehaviour {
     }
 
     void Update()
-    {
+    {/*
         foreach(Note note in keys)
         {
             switch (note.key)
@@ -69,7 +76,7 @@ public class KeyHandler : MonoBehaviour {
             note.timeAlive -= Time.deltaTime;
         }
 
-        keys.RemoveAll(p => !p.isPressed && !p.isActive);
+        keys.RemoveAll(p => !p.isPressed && !p.isActive);*/
     }
 
     public void addKeyToTrack(Note note)
