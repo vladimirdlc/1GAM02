@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Game : MonoBehaviour {
+public class FallingBar : MonoBehaviour {
     public GameObject note;
 
 	// Use this for initialization
