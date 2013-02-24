@@ -4,6 +4,7 @@ using System.Collections;
 public class NoteValidator : MonoBehaviour {
     public Material onMaterial;
     public Material offMaterial;
+    public KeyCode noteCode;
     private GameObject currentNote;
 
     void OnTriggerEnter(Collider other)
@@ -19,16 +20,16 @@ public class NoteValidator : MonoBehaviour {
         foreach (MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
             mesh.material = offMaterial;
 
-        currentNote = null;
+        if(other.gameObject == currentNote) currentNote = null;
     }
 
     void OnTriggerStay(Collider other)
     {
         if (currentNote != null)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(noteCode))
             {
-                KeyHandler.Instance.playSound(KeyCode.A);
+                KeyHandler.Instance.playSound(noteCode);
                 Destroy(currentNote);
             }
         }
