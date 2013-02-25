@@ -7,7 +7,7 @@ public class FallingBar : MonoBehaviour {
 	// Use this for initialization
     IEnumerator Start()
     {
-        float[] segs = { 0.3f, 0.9f, 0.9f };
+        float[] segs = { 0.5f, 1.4f, 1.4f };
         int i = -1;
 
 	     while (true) {
