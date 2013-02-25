@@ -10,9 +10,9 @@ public class KeyHandler : MonoBehaviour {
 
     public GameObject fallKeyBound;
 
-    public AudioSource soundA;
     public AudioSource soundS;
     public AudioSource soundD;
+    public AudioSource soundF;
 
     public static KeyHandler Instance { 
         get {
@@ -33,9 +33,9 @@ public class KeyHandler : MonoBehaviour {
     {
         keys = new List<Note>();
         sounds = new Dictionary<KeyCode, AudioSource>();
-        sounds.Add(KeyCode.A, soundA);
         sounds.Add(KeyCode.S, soundS);
         sounds.Add(KeyCode.D, soundD);
+        sounds.Add(KeyCode.F, soundF);
     }
 
     void Update()
