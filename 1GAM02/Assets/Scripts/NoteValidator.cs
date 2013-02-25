@@ -17,10 +17,8 @@ public class NoteValidator : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        foreach (MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
-            mesh.material = offMaterial;
-
-        if(other.gameObject == currentNote) currentNote = null;
+        turnOff();
+        currentNote.GetComponent<MeshRenderer>().enabled = true;
     }
 
     void OnTriggerStay(Collider other)
@@ -31,11 +29,18 @@ public class NoteValidator : MonoBehaviour {
             {
                 KeyHandler.Instance.playSound(noteCode);
                 Destroy(currentNote);
+                turnOff();
             }
         }
         else
         {
         }
+    }
+
+    private void turnOff()
+    {
+        foreach (MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
+            mesh.material = offMaterial;
     }
 
 }

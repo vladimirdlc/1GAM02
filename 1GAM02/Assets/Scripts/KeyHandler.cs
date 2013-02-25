@@ -13,6 +13,9 @@ public class KeyHandler : MonoBehaviour {
     public AudioSource soundS;
     public AudioSource soundD;
     public AudioSource soundF;
+    public AudioSource soundJ;
+    public AudioSource soundK;
+    public AudioSource soundL;
 
     public static KeyHandler Instance { 
         get {
@@ -36,47 +39,9 @@ public class KeyHandler : MonoBehaviour {
         sounds.Add(KeyCode.S, soundS);
         sounds.Add(KeyCode.D, soundD);
         sounds.Add(KeyCode.F, soundF);
-    }
-
-    void Update()
-    {/*
-        foreach(Note note in keys)
-        {
-            switch (note.key)
-            {
-                case KeyCode.A:
-                case KeyCode.S:
-                case KeyCode.D:
-                    note.isActive = note.timeAlive > 0;
-                    if (note.isActive)
-                    {
-                        if (Input.GetKeyDown(note.key))
-                        {
-                            //Debug.Log("isOk");
-                            note.isPressed = true;
-                        }
-                    }
-                    else
-                    {
-                        if (!note.isPressed)
-                        {
-                           
-                           // Debug.Log(note.key+"You suck");
-                        }
-                    }
-
-                    if (Input.GetKeyDown(note.key))
-                    {
-                        sounds[note.key].audio.Play();
-                    }
-
-                    break;
-            }
-
-            note.timeAlive -= Time.deltaTime;
-        }
-
-        keys.RemoveAll(p => !p.isPressed && !p.isActive);*/
+        sounds.Add(KeyCode.J, soundJ);
+        sounds.Add(KeyCode.K, soundK);
+        sounds.Add(KeyCode.L, soundL);
     }
 
     public void addKeyToTrack(Note note)

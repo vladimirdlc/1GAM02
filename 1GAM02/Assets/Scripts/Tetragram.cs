@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class FallingBar : MonoBehaviour {
-    public GameObject note;
+public class Tetragram : MonoBehaviour {
+    public GameObject roundNote;
     public float[] segs = { 0.5f, 1.4f, 1.4f };
 
 	// Use this for initialization
@@ -19,6 +19,6 @@ public class FallingBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void createNote () {
-        Instantiate(note);
+        Instantiate(roundNote);
 	}
 }

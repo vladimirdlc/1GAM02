@@ -15,9 +15,7 @@ public class SeesawNoteValidator : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        foreach (MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
-            mesh.material = offMaterial;
-
+        turnOff();
         currentNote.GetComponent<MeshRenderer>().enabled = true;
     }
 
@@ -29,8 +27,15 @@ public class SeesawNoteValidator : MonoBehaviour {
             {
                 KeyHandler.Instance.playSound(noteCode);
                 currentNote.GetComponent<MeshRenderer>().enabled = false;
+                turnOff();
             }
         }
+    }
+
+    private void turnOff()
+    {
+        foreach (MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
+            mesh.material = offMaterial;
     }
 
 }
