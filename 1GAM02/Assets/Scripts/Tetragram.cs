@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Tetragram : MonoBehaviour {
     public GameObject roundNote;
+    public GameObject parentLine;
     public float[] segs = { 0.5f, 1.4f, 1.4f };
 
 	// Use this for initialization
@@ -19,6 +20,7 @@ public class Tetragram : MonoBehaviour {
 	
 	// Update is called once per frame
 	void createNote () {
-        Instantiate(roundNote);
+        GameObject clone = Instantiate(roundNote) as GameObject;
+        clone.transform.parent = parentLine.transform;
 	}
 }
