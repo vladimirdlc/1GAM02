@@ -1,24 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class SeesawNoteValidator : MonoBehaviour {
-    public Material onMaterial;
-    public Material offMaterial;
-    public KeyCode noteCode;
-    public GameObject currentNote;
-
-    void OnTriggerEnter(Collider other)
-    {
-        foreach(MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
-         mesh.material = onMaterial;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        turnOff();
-        currentNote.GetComponent<MeshRenderer>().enabled = true;
-    }
-
+public class SeesawNoteValidator : NoteValidator {
     void OnTriggerStay(Collider other)
     {
         if (currentNote.GetComponent<MeshRenderer>().enabled)
@@ -31,11 +14,4 @@ public class SeesawNoteValidator : MonoBehaviour {
             }
         }
     }
-
-    private void turnOff()
-    {
-        foreach (MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
-            mesh.material = offMaterial;
-    }
-
 }

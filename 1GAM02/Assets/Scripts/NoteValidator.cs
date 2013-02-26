@@ -5,7 +5,7 @@ public class NoteValidator : MonoBehaviour {
     public Material onMaterial;
     public Material offMaterial;
     public KeyCode noteCode;
-    private GameObject currentNote;
+    protected GameObject currentNote;
 
     void OnTriggerEnter(Collider other)
     {
@@ -37,7 +37,7 @@ public class NoteValidator : MonoBehaviour {
         }
     }
 
-    private void turnOff()
+    protected void turnOff()
     {
         foreach (MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
             mesh.material = offMaterial;
