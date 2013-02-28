@@ -22,5 +22,6 @@ public class Tetragram : MonoBehaviour {
 	void createNote () {
         GameObject clone = Instantiate(roundNote) as GameObject;
         clone.transform.parent = parentLine.transform;
+		clone.transform.localScale = roundNote.transform.localScale;
 	}
 }

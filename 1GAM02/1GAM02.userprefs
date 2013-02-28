@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GradientBG.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tetragram.cs">
     <Files>
-      <File FileName="Assets\Scripts\GradientBG.cs" Line="3" Column="24" />
+      <File FileName="Assets\Scripts\Tetragram.cs" Line="17" Column="26" />
       <File FileName="Assets\Scripts\Note.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NoteAction.cs" Line="23" Column="1" />
-      <File FileName="Assets\Scripts\Game.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\DestroyFunction.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\KeyHandler.cs" Line="1" Column="1" />
     </Files>

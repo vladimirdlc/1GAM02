@@ -21,7 +21,7 @@ public class NoteValidator : MonoBehaviour {
         currentNote.GetComponent<MeshRenderer>().enabled = true;
     }
 
-    void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (currentNote != null)
         {
