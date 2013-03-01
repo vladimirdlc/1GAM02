@@ -14,11 +14,17 @@ public class SeesawNoteValidator : NoteValidator {
                 turnOff();
             }
         }
+        else
+        {
+            if (Input.GetKeyDown(noteCode))
+            {
+                turnOnError();
+            }
+        }
     }
 	
 	private void OnTriggerExit(Collider other)
     {
-		
         turnOff();
         currentNote.GetComponent<MeshRenderer>().enabled = true;
 		currentNote = null;
