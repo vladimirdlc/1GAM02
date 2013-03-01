@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class SeesawNoteValidator : NoteValidator {
-    private void OnTriggerStay(Collider other)
+    protected override void OnTriggerStay(Collider other)
     {
         if (currentNote.GetComponent<MeshRenderer>().enabled)
         {

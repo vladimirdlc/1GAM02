@@ -17,11 +17,12 @@ public class NoteValidator : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
+		
         turnOff();
         currentNote.GetComponent<MeshRenderer>().enabled = true;
     }
 
-    private void OnTriggerStay(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         if (currentNote != null)
         {
