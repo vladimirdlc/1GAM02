@@ -8,8 +8,6 @@ public class KeyHandler : MonoBehaviour {
     private List<Note> keys;
     private Dictionary<KeyCode, AudioSource> sounds;
 
-    public GameObject fallKeyBound;
-
     public AudioSource soundS;
     public AudioSource soundD;
     public AudioSource soundF;
