@@ -7,7 +7,7 @@ public class NoteValidator : MonoBehaviour {
     public KeyCode noteCode;
     protected GameObject currentNote;
 
-    void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         foreach(MeshRenderer mesh in this.GetComponentsInChildren<MeshRenderer>())
          mesh.material = onMaterial;
@@ -15,14 +15,19 @@ public class NoteValidator : MonoBehaviour {
         currentNote = other.gameObject;
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
 		
-        turnOff();
-        currentNote.GetComponent<MeshRenderer>().enabled = true;
+        
+        //currentNote.GetComponent<MeshRenderer>().enabled = true;
+		if (other.gameObject == currentNote) 
+		{
+			turnOff();
+			currentNote = null;
+		}
     }
 
-    protected virtual void OnTriggerStay(Collider other)
+    private void Update()
     {
         if (currentNote != null)
         {

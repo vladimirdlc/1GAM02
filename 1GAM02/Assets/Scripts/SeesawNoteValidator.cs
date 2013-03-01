@@ -2,9 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class SeesawNoteValidator : NoteValidator {
-    protected override void OnTriggerStay(Collider other)
+	
+    private void Update()
     {
-        if (currentNote.GetComponent<MeshRenderer>().enabled)
+        if ((currentNote != null) && currentNote.GetComponent<MeshRenderer>().enabled)
         {
             if (Input.GetKeyDown(noteCode))
             {
@@ -13,5 +14,13 @@ public class SeesawNoteValidator : NoteValidator {
                 turnOff();
             }
         }
+    }
+	
+	private void OnTriggerExit(Collider other)
+    {
+		
+        turnOff();
+        currentNote.GetComponent<MeshRenderer>().enabled = true;
+		currentNote = null;
     }
 }
