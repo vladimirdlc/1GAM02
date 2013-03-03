@@ -5,13 +5,14 @@ public class MusicLine : MonoBehaviour {
     public GameObject roundNote;
     public float[] segs = { 1 };
 	public bool isParent;
+
 	private float currentTime;
 	private float currentWait;
 	private int i;
 
     void Start()
     {
-        i = -1;
+        i = 0;
 		currentWait = segs[0];
 	}
 	
@@ -20,9 +21,12 @@ public class MusicLine : MonoBehaviour {
 		if((currentTime += Time.deltaTime) > currentWait)
 		{
 			currentTime -= currentWait;
+			
             i = ++i % segs.Length;
 			currentWait = segs[i];
-            createNote();
+			
+			if(i > 0)
+            	createNote();
 		}
 	}
 	

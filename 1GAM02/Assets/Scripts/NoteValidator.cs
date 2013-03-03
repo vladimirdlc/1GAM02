@@ -20,7 +20,8 @@ public class NoteValidator : MonoBehaviour {
     {
 		if (other.gameObject == currentNote) 
 		{
-			turnOff();
+			turnOnError();
+			//turnOff();
 			currentNote = null;
 		}
     }
@@ -31,8 +32,8 @@ public class NoteValidator : MonoBehaviour {
         {
             if (Input.GetKeyDown(noteCode))
             {
-                KeyHandler.Instance.playSound(noteCode);
                 Destroy(currentNote);
+				KeyHandler.Instance.playSound(noteCode);
                 turnOff();
             }
         }
