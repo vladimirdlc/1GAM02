@@ -8,6 +8,7 @@ public class NoteValidator : MonoBehaviour {
 	
     public KeyCode noteCode;
     protected GameObject currentNote;
+    protected bool isFirstPress = true;
 
     protected void OnTriggerEnter(Collider other)
     {
@@ -21,7 +22,6 @@ public class NoteValidator : MonoBehaviour {
 		if (other.gameObject == currentNote) 
 		{
 			turnOnError();
-			//turnOff();
 			currentNote = null;
 		}
     }
@@ -34,6 +34,12 @@ public class NoteValidator : MonoBehaviour {
             {
                 Destroy(currentNote);
 				KeyHandler.Instance.playSound(noteCode);
+                GameLogic.hitCount++;
+                if (isFirstPress)
+                {
+                    GameLogic.differentHitCount++;
+                    isFirstPress = false;
+                }
                 turnOff();
             }
         }
@@ -41,8 +47,6 @@ public class NoteValidator : MonoBehaviour {
         {
             if (Input.GetKeyDown(noteCode))
             {
-                //KeyHandler.Instance.playSound(noteCode);
-                //Destroy(currentNote);
                 turnOnError();
             }
         }

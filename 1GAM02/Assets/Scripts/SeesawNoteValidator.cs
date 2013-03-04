@@ -11,6 +11,12 @@ public class SeesawNoteValidator : NoteValidator {
             {
                 KeyHandler.Instance.playSound(noteCode);
                 currentNote.GetComponent<MeshRenderer>().enabled = false;
+                GameLogic.hitCount++;
+                if (isFirstPress)
+                {
+                    GameLogic.differentHitCount++;
+                    isFirstPress = false;
+                }
                 turnOff();
             }
         }
